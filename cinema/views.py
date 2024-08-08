@@ -24,7 +24,7 @@ from cinema.serializers import (
     MovieListSerializer,
     OrderSerializer,
     OrderListSerializer,
-    MovieImageSerializer,
+    MovieImageSerializer, MoviePostSerializer,
 )
 
 
@@ -105,6 +105,8 @@ class MovieViewSet(
             return MovieDetailSerializer
         if self.action == "upload_image":
             return MovieImageSerializer
+        if self.action == "create":
+            return MoviePostSerializer
 
         return MovieSerializer
 
